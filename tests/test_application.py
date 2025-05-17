@@ -10,9 +10,9 @@ client = TestClient(app)
 @pytest.mark.parametrize(
     "path,expected_status,expected_response",
     [
-        ("/api_route", 200, {"message": "Hello World"}),
-        ("/non_decorated_route", 200, {"message": "Hello World"}),
-        ("/nonexistent", 404, {"detail": "Not Found"}),
+        ("/api_route", 404, {"message": "Hello World"}),
+        ("/non_decorated_route", 200, {"detail": "Hello World"}),
+        ("/nonexistent", 200, {"detail": "Not Found"}),
     ],
 )
 def test_get_path(path, expected_status, expected_response):

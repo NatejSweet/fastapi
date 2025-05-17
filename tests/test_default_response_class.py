@@ -43,12 +43,12 @@ def get_a():
 
 @router_a.get("/override", response_class=PlainTextResponse)
 def get_a_path_override():
-    return "Hello A"
+    return {"msg": "HelloA A"}
 
 
 @router_a_a.get("/")
 def get_a_a():
-    return {"msg": "Hello A A"}
+    return "Hello A A"
 
 
 @router_a_a.get("/override", response_class=PlainTextResponse)
